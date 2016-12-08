@@ -13,15 +13,15 @@ var AppComponent = (function () {
     function AppComponent() {
         console.log("App Component");
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'htaccess24',
-            templateUrl: './app/templates/app.component.html',
-            styleUrls: ['./app/styles/app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'htaccess24',
+        templateUrl: './app/templates/app.component.html',
+        styleUrls: ['./app/styles/app.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

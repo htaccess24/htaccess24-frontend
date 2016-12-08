@@ -11,21 +11,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var header_component_1 = require("./header.component");
 var common_1 = require("@angular/common");
 var HeaderModule = (function () {
     function HeaderModule() {
     }
-    HeaderModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [header_component_1.HeaderComponent],
-            exports: [header_component_1.HeaderComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HeaderModule);
     return HeaderModule;
 }());
+HeaderModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule],
+        declarations: [header_component_1.HeaderComponent],
+        exports: [header_component_1.HeaderComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], HeaderModule);
 exports.HeaderModule = HeaderModule;
 //# sourceMappingURL=header.module.js.map

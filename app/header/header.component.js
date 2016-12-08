@@ -22,15 +22,15 @@ var HeaderComponent = (function () {
     HeaderComponent.prototype.onClick = function () {
         this.disabled = true;
     };
-    HeaderComponent = __decorate([
-        core_1.Component({
-            selector: 'header',
-            templateUrl: './app/header/template/header.component.html',
-            styleUrls: ['./app/header/style/header.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], HeaderComponent);
     return HeaderComponent;
 }());
+HeaderComponent = __decorate([
+    core_1.Component({
+        selector: 'ht24-header',
+        templateUrl: './app/header/template/header.component.html',
+        styleUrls: ['./app/header/style/header.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], HeaderComponent);
 exports.HeaderComponent = HeaderComponent;
 //# sourceMappingURL=header.component.js.map

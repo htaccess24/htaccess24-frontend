@@ -4,7 +4,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-    selector: 'header',
+    selector: 'ht24-header',
     templateUrl: './app/header/template/header.component.html',
     styleUrls: ['./app/header/style/header.component.css']
 })

@@ -1,7 +1,7 @@
 {
-  "name": "angular2",
+  "name": "htaccess24",
   "version": "0.0.1",
-  "description": "Just a testing area for developments with Angular 2",
+  "description": "I swear it will be a better version of everything",
   "main": "index.js",
   "scripts": {
     "postinstall": "typings install",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "angular",
-    "2.0"
+    "2.0",
+    "htaccess24"
   ],
   "author": "Jason Bladt",
   "license": "ISC",
