@@ -1,0 +1,257 @@
+.active {
+     font-weight: bolder;
+ }
+
+.unactive {
+    font-weight: normal;
+}
+
+/*
+====================================
+- START :: Header Area
+******************************************************************/
+
+header {
+    box-shadow: 0px 1px 6px #222;
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+    /*position: fixed;
+    top: 0;
+    left: 0;*/
+    z-index: 999;
+    background: #FCFCFC; /* FCFCFC */
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
+}
+
+header div#logo {
+    display: inline-block;
+    height: 125px;
+    line-height: 80px;
+    float: left;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+header nav {
+    display: inline-block;
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: -3%;
+    height: 75px;
+    width: 100%;
+}
+
+header nav ul li {
+    float: left;
+    height: 96px;
+}
+
+header nav ul li.active {
+    border-bottom: 4px solid #1babe3;
+}
+
+header nav ul li:hover,
+header nav ul li:focus {
+    border-bottom: 4px solid #1babe3;
+    transition: .2s all;
+}
+
+header nav a {
+    line-height: 125px;
+    padding-left: 20px;
+    color: #595657;
+    padding-right: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    display: block;
+}
+
+section {
+    opacity: 1;
+    transition: .5s all;
+    display: block;
+}
+
+section.hide-content {
+    display:none;
+}
+
+header nav a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+header.smaller {
+    height: 125px;
+    top: 0px;
+}
+
+.section-title {
+    padding: 32px 0px 16px !important;
+    font-size: 4rem;
+    color: #fff;
+    font-variant: small-caps;
+    display: block;
+    width: 100%;
+}
+
+/*header.smaller div#logo {
+	/*width: 150px;
+	height: 88px;
+	line-height: 88px;
+}*/
+
+header.smaller div#logo {
+    height: 125px;
+    line-height: 80px;
+}
+
+header.smaller nav a {
+    line-height: 80px;
+}
+
+/*// The wrapper was defined with a fixed width and height
+// Note, that the pointer-events property is set to 'none'.
+// We don't need any pointer events in the entire element.*/
+.menu-icon-wrapper{
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    pointer-events: none;
+    transition: 0.1s;
+}
+
+/*// To perform the scaled transform for the second demo*/
+.menu-icon-wrapper.scaled{
+    transform: scale(0.5);
+}
+
+/*// Adjusting the position of the SVG element*/
+.menu-icon-wrapper svg{
+    position: absolute;
+    top: -33px;
+    left: -33px;
+}
+
+/*// Defining the styles for the path elements*/
+.menu-icon-wrapper svg path{
+    stroke: #fff;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+
+/*// Setting the pointer-events property to 'auto',
+// and allowing only events for the trigger element*/
+.menu-icon-wrapper .menu-icon-trigger{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* #logo img {
+	min-width: 210px;
+	min-height: 88px;
+} */
+
+.jumpfix {
+    height:75px;
+    display: none;
+}
+
+@media all and (max-width:960px) {
+    .jumpfix.enable {
+        display:block;
+    }
+}
+
+@media all and (max-width: 660px) {
+    header {
+        height: 75px;
+    }
+
+    header div#logo {
+        display: block;
+        margin: 0 auto;
+        height: 75px;
+        line-height: 75px;
+        text-align: center;
+    }
+
+    header nav {
+        display: block;
+        float: none;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    header nav a {
+        line-height: 50px;
+        margin: 0 10px;
+    }
+
+    header.smaller {
+        height: 75px;
+        position: fixed;
+    }
+
+    .animate-header {
+        animation-name: animateHeader;
+        animation-duration: 2s;
+    }
+
+    @keyframes animateHeader {
+        from {opacity: 0;top:-200px}
+        to {opacity: 1;top:0px}
+    }
+
+    header.smaller div#logo {
+        height: 75px;
+        line-height: 75px;
+    }
+
+    header.smaller nav {
+        height: 35px;
+    }
+
+    header.smaller nav a {
+        line-height: 35px;
+    }
+
+    #dummy2 .dummy__item h3 a {
+        font-size: 1.1em !important;
+        color: #666;
+        display: block;
+        padding: 20px 0;
+    }
+}
+
+/*
+====================================
+- END :: Header Area
+******************************************************************/
