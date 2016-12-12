@@ -4,7 +4,8 @@
     <div class="container clearfix">
         <div class="row">
             <div id="logo" class="col-xs-8 col-md-3 vcenter">
-                <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="/images/htaccess24.svg" />
+                <!--<img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="/images/htaccess24.svg" />-->
+                <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="http://placehold.it/270x72" />
             </div>
 
             <nav class="col-xs-1 col-md-8 pull-right">
@@ -15,22 +16,18 @@
                     <li class="active pull-right"><a href="">Blog</a></li>
                 </ul>
 
-                <div class="device device--alt hidden-md hidden-lg">
-                    <div class="device__screen">
-                        <div id="menu-icon-wrapper2" class="menu-icon-wrapper pull-right" style="visibility: hidden">
-                            <svg width="1000px" height="1000px">
-                                <path id="pathD" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
-                                <path id="pathE" d="M 300 500 L 700 500"></path>
-                                <path id="pathF" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
-                            </svg>
-                            <button id="menu-icon-trigger2" class="menu-icon-trigger pull-right"></button>
-                        </div><!-- menu-icon-wrapper -->
-                    </div><!-- /device-content -->
+                <div class="hidden-md hidden-lg pull-right" (click)="toggleMenue()">
+                    <div id="nav-icon3" [ngClass]="{'open': isOpened}">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div><!-- /device -->
             </nav>
         </div>
     </div>
-    <div id="dummy2" class="dummy col-xs-12">
+    <div id="dummy2" class="dummy col-xs-12" [ngClass]="{'dummy--active': isOpened}">
         <div class="dummy__item">
             <h3><a class="active" href="#" target="_self">Blog</a></h3>
         </div>

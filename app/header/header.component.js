@@ -14,13 +14,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var HeaderComponent = (function () {
     function HeaderComponent() {
-        this.name = "Jason Bladt";
-        this.active = true;
-        this.disabled = null;
+        this.isOpened = false;
         console.log("Header Component");
     }
-    HeaderComponent.prototype.onClick = function () {
-        this.disabled = true;
+    HeaderComponent.prototype.toggleMenue = function () {
+        this.isOpened = !this.isOpened;
     };
     return HeaderComponent;
 }());

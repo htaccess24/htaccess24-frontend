@@ -10,15 +10,13 @@ import {Component} from "@angular/core";
 })
 
 export class HeaderComponent {
-    name:string = "Jason Bladt";
-    active:boolean = true;
-    disabled:any = null;
+    isOpened:boolean = false;
 
     constructor () {
         console.log("Header Component");
     }
 
-    onClick(): void {
-        this.disabled = true;
+    toggleMenue(): void {
+        this.isOpened = !this.isOpened;
     }
 }
