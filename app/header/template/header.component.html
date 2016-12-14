@@ -4,16 +4,20 @@
     <div class="container clearfix">
         <div class="row">
             <div id="logo" class="col-xs-8 col-md-3 vcenter">
-                <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="/images/htaccess24.svg" />
-                <!-- <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="http://placehold.it/270x72" />-->
+                <!-- <a routerLink="/">
+                    <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="/images/htaccess24.svg" />
+                </a> -->
+                <a routerLink="/">
+                    <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="http://placehold.it/270x72" />
+                </a>
              </div>
 
              <nav class="col-xs-1 col-md-8 pull-right">
                  <ul class="hidden-xs hidden-sm pull-right">
-                     <li class="pull-right"><a href="">Über mich</a></li>
-                     <li class="pull-right"><a href="">Tools</a></li>
-                     <li class="pull-right"><a href="">Tutorials</a></li>
-                     <li class="active pull-right"><a href="">Blog</a></li>
+                     <li class="pull-right" routerLinkActive="active"><a routerLink="/ueber-mich">Über mich</a></li>
+                     <li class="pull-right" routerLinkActive="active"><a routerLink="/tools">Tools</a></li>
+                     <li class="pull-right" routerLinkActive="active"><a routerLink="/tutorials">Tutorials</a></li>
+                     <li class="pull-right" routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
                  </ul>
 
                  <div class="hidden-md hidden-lg pull-right menu-toggler" (click)="toggleMenue()">
@@ -28,18 +32,14 @@
         </div>
     </div>
     <div id="dummy2" class="dummy col-xs-12 hidden-md hidden-lg" [ngClass]="{'dummy--active': isOpened, 'animated fadeIn': isOpened}">
-        <div class="dummy__item">
-            <h3><a class="active" href="#" target="_self">Blog</a></h3>
-        </div>
-        <div class="dummy__item">
-            <h3><a class="active" href="#" target="_self">Tutorials</a></h3>
-        </div>
-        <div class="dummy__item">
-            <h3><a class="active" href="#" target="_self">Tools</a></h3>
-        </div>
-        <div class="dummy__item">
-            <h3><a class="active" href="#" target="_self">Über mich</a></h3>
-        </div>
-    </div><!-- /dummy -->
+        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Blog</a></h3>
+        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></h3>
+        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Tools</a></h3>
+        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Über mich</a></h3>
+    </div>
     <div class="clearfix"></div>
 </header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>

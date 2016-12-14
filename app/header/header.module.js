@@ -13,7 +13,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var header_component_1 = require("./header.component");
+var home_component_1 = require("../content/home.component");
+var pagenotfound_component_1 = require("../content/pagenotfound.component");
+var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
+var appRoutes = [
+    { path: '', component: home_component_1.HomeComponent },
+    { path: '**', component: pagenotfound_component_1.PageNotFoundComponent }
+];
 var HeaderModule = (function () {
     function HeaderModule() {
     }
@@ -21,8 +28,15 @@ var HeaderModule = (function () {
 }());
 HeaderModule = __decorate([
     core_1.NgModule({
-        imports: [common_1.CommonModule],
-        declarations: [header_component_1.HeaderComponent],
+        imports: [
+            common_1.CommonModule,
+            router_1.RouterModule.forRoot(appRoutes)
+        ],
+        declarations: [
+            header_component_1.HeaderComponent,
+            home_component_1.HomeComponent,
+            pagenotfound_component_1.PageNotFoundComponent
+        ],
         exports: [header_component_1.HeaderComponent]
     }),
     __metadata("design:paramtypes", [])
