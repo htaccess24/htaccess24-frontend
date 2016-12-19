@@ -262,16 +262,17 @@ header nav ul {
 
 header nav ul li {
     float: left;
-    height: 96px;
+    height: 97px;
 }
 
 header nav ul li.active {
-    border-bottom: 4px solid #1babe3;
+    border-bottom: 4px solid rgba(27, 171, 227, 1) !important;
 }
 
 header nav ul li:hover,
-header nav ul li:focus {
-    border-bottom: 4px solid #1babe3;
+header nav ul li:focus,
+header nav ul li:active {
+    border-bottom: 4px solid rgba(27, 171, 227, 0.5);
     transition: .2s all;
 }
 
@@ -288,6 +289,7 @@ header nav a {
     -o-transition: all 0.3s;
     transition: all 0.3s;
     display: block;
+    text-decoration: none !important;
 }
 
 section {

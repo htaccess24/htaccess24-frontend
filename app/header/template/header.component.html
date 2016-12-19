@@ -32,14 +32,10 @@
         </div>
     </div>
     <div id="dummy2" class="dummy col-xs-12 hidden-md hidden-lg" [ngClass]="{'dummy--active': isOpened, 'animated fadeIn': isOpened}">
-        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Blog</a></h3>
-        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></h3>
-        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Tools</a></h3>
-        <h3><a routerLink="/etwas-ganz-anderes2" routerLinkActive="active" (click)="toggleMenue()">Über mich</a></h3>
+        <h3><a routerLink="/blog" routerLinkActive="active" (click)="toggleMenue()">Blog</a></h3>
+        <h3><a routerLink="/tuts" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></h3>
+        <h3><a routerLink="/tools" routerLinkActive="active" (click)="toggleMenue()">Tools</a></h3>
+        <h3><a routerLink="/ueber-mich" routerLinkActive="active" (click)="toggleMenue()">Über mich</a></h3>
     </div>
     <div class="clearfix"></div>
 </header>
-
-<main>
-    <router-outlet></router-outlet>
-</main>
