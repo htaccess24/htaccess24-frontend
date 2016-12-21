@@ -13,6 +13,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var app_routes_1 = require("./app.routes");
 var header_module_1 = require("./header/header.module");
+var footer_module_1 = require("./footer/footer.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +24,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routes_1.AppRoutingModule,
-            header_module_1.HeaderModule
+            header_module_1.HeaderModule,
+            footer_module_1.FooterModule
         ],
         declarations: [
             app_component_1.AppComponent,

@@ -9,10 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+require("rxjs/add/operator/filter");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_router) {
+        var _this = this;
+        _router.events.filter(function (event) { return event instanceof router_1.NavigationEnd; }).subscribe(function (event) {
+            _this.routeChanged(event.url);
+        });
         console.log("App Component");
     }
+    AppComponent.prototype.routeChanged = function (route) {
+        console.log('Path changed: ' + route);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -21,7 +30,7 @@ AppComponent = __decorate([
         templateUrl: './app/templates/app.component.html',
         styleUrls: ['./app/styles/app.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [router_1.Router])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
