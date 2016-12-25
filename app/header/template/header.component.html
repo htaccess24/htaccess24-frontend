@@ -3,24 +3,24 @@
 
     <div class="container clearfix">
         <div class="row">
-            <div id="logo" class="col-xs-8 col-md-3 vcenter">
+            <div id="logo" class="col-xs-8 col-md-3 mx-auto">
                 <!-- <a routerLink="/">
-                    <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="/images/htaccess24.svg" />
+                    <img class="vcenter img-fluid" width="270" height="75" alt="" title="" src="/images/htaccess24.svg" />
                 </a> -->
                 <a routerLink="/">
-                    <img class="vcenter img-responsive" width="270" height="72" alt="" title="" src="http://placehold.it/270x72" />
+                    <img class="img-fluid" width="270" height="75" alt="" title="" src="http://placehold.it/270x75" />
                 </a>
              </div>
 
-             <nav class="col-xs-1 col-md-8 pull-right">
-                 <ul class="hidden-xs hidden-sm pull-right">
-                     <li class="pull-right" routerLinkActive="active"><a routerLink="/ueber-mich">Über mich</a></li>
-                     <li class="pull-right" routerLinkActive="active"><a routerLink="/tools">Tools</a></li>
-                     <li class="pull-right" routerLinkActive="active"><a routerLink="/tutorials">Tutorials</a></li>
-                     <li class="pull-right" routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
+             <nav class="col-xs-1 col-md-8 float-xs-right">
+                 <ul class="hidden-sm-down float-xs-right">
+                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/ueber-mich">Über mich</a></li>
+                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/tools">Tools</a></li>
+                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/tutorials">Tutorials</a></li>
+                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
                  </ul>
 
-                 <div class="hidden-md hidden-lg pull-right menu-toggler" (click)="toggleMenue()">
+                 <div class="hidden-md-up float-xs-right menu-toggler" (click)="toggleMenue()">
                      <div id="nav-icon3" [ngClass]="{'open': isOpened}">
                          <span></span>
                          <span></span>
@@ -31,7 +31,7 @@
             </nav>
         </div>
     </div>
-    <div id="dummy2" class="dummy col-xs-12 hidden-md hidden-lg" [ngClass]="{'dummy--active': isOpened, 'animated fadeIn': isOpened}">
+    <div id="dummy2" class="dummy col-xs-12 hidden-md-up" [ngClass]="{'dummy--active': isOpened, 'animated fadeIn': isOpened}">
         <h3><a routerLink="/blog" routerLinkActive="active" (click)="toggleMenue()">Blog</a></h3>
         <h3><a routerLink="/tuts" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></h3>
         <h3><a routerLink="/tools" routerLinkActive="active" (click)="toggleMenue()">Tools</a></h3>

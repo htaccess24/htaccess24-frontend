@@ -238,7 +238,6 @@ header {
 header div#logo {
     display: inline-block;
     height: 125px;
-    line-height: 80px;
     float: left;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -321,15 +320,6 @@ header.smaller {
     width: 100%;
 }
 
-header.smaller div#logo {
-    height: 125px;
-    line-height: 80px;
-}
-
-header.smaller nav a {
-    line-height: 80px;
-}
-
 /*// The wrapper was defined with a fixed width and height
 // Note, that the pointer-events property is set to 'none'.
 // We don't need any pointer events in the entire element.*/
@@ -376,10 +366,9 @@ header.smaller nav a {
     padding: 0;
 }
 
-/* #logo img {
-	min-width: 210px;
-	min-height: 88px;
-} */
+#logo img {
+	min-height: 75px;
+}
 
 .jumpfix {
     height:75px;
@@ -401,7 +390,6 @@ header.smaller nav a {
         display: block;
         margin: 0 auto;
         height: 75px;
-        line-height: 75px;
         text-align: center;
     }
 
@@ -416,34 +404,6 @@ header.smaller nav a {
     header nav a {
         line-height: 50px;
         margin: 0 10px;
-    }
-
-    header.smaller {
-        height: 75px;
-        position: fixed;
-    }
-
-    .animate-header {
-        animation-name: animateHeader;
-        animation-duration: 2s;
-    }
-
-    @keyframes animateHeader {
-        from {opacity: 0;top:-200px}
-        to {opacity: 1;top:0px}
-    }
-
-    header.smaller div#logo {
-        height: 75px;
-        line-height: 75px;
-    }
-
-    header.smaller nav {
-        height: 35px;
-    }
-
-    header.smaller nav a {
-        line-height: 35px;
     }
 
     #dummy2 .dummy__item h3 a {
