@@ -1,23 +1,21 @@
 <header>
-    <div class="jumpfix"></div>
-
-    <div class="container clearfix">
+    <div class="container">
         <div class="row">
-            <div id="logo" class="col-xs-8 col-md-3 mx-auto">
-                <!-- <a routerLink="/">
-                    <img class="vcenter img-fluid" width="270" height="75" alt="" title="" src="/images/htaccess24.svg" />
-                </a> -->
-                <a routerLink="/">
-                    <img class="img-fluid" width="270" height="75" alt="" title="" src="http://placehold.it/270x75" />
+            <div id="logo" class="col-xs-8 col-sm-3">
+                 <a routerLink="/">
+                    <img class="img-fluid" width="270" height="75" alt="" title="" src="/images/htaccess24.svg" />
                 </a>
+                <!--<a routerLink="/">
+                    <img class="img-fluid" width="270" height="75" alt="" title="" src="http://placehold.it/270x75" />
+                </a>-->
              </div>
 
-             <nav class="col-xs-1 col-md-8 float-xs-right">
-                 <ul class="hidden-sm-down float-xs-right">
-                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/ueber-mich">Über mich</a></li>
-                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/tools">Tools</a></li>
-                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/tutorials">Tutorials</a></li>
-                     <li class="float-xs-right" routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
+             <nav class="nav nav-inline col-xs-1 col-sm-8 float-xs-right">
+                 <ul class="hidden-sm-down">
+                     <li routerLinkActive="active"><a routerLink="/ueber-mich">Über mich</a></li>
+                     <li routerLinkActive="active"><a routerLink="/tools">Tools</a></li>
+                     <li routerLinkActive="active"><a routerLink="/tutorials">Tutorials</a></li>
+                     <li routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
                  </ul>
 
                  <div class="hidden-md-up float-xs-right menu-toggler" (click)="toggleMenue()">

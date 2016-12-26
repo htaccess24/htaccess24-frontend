@@ -4,7 +4,7 @@
 ******************************************************************/
 
 #nav-icon3 {
-    width: 45px;
+    width: 40px;
     height: 45px;
     position: relative;
     margin: 15px auto;
@@ -22,10 +22,9 @@
 #nav-icon3 span {
     display: block;
     position: absolute;
-    height: 6px;
+    height: 4px;
     width: 100%;
     background: #666666;
-    border-radius: 9px;
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -39,15 +38,15 @@
 }
 
 #nav-icon3 span:nth-child(1) {
-    top: 0px;
+    top: 0;
 }
 
 #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
-    top: 14px;
+    top: 12px;
 }
 
 #nav-icon3 span:nth-child(4) {
-    top: 28px;
+    top: 24px;
 }
 
 #nav-icon3.open span:nth-child(1) {
@@ -127,6 +126,10 @@
 .menu-toggler {
     z-index: 999;
     position: relative;
+}
+
+.menu-toggler {
+    padding: 6px 0;
 }
 
 #dummy2.dummy--active {
@@ -236,20 +239,12 @@ header {
 }
 
 header div#logo {
-    display: inline-block;
-    height: 125px;
-    float: left;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     overflow: hidden;
-}
-
-header nav {
-    display: inline-block;
-    float: right;
 }
 
 header nav ul {
@@ -382,23 +377,11 @@ header.smaller {
 }
 
 @media all and (max-width: 660px) {
-    header {
-        height: 75px;
-    }
-
     header div#logo {
         display: block;
         margin: 0 auto;
         height: 75px;
         text-align: center;
-    }
-
-    header nav {
-        display: block;
-        float: none;
-        height: 50px;
-        text-align: center;
-        margin: 0 auto;
     }
 
     header nav a {
