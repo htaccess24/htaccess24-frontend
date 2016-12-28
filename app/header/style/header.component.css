@@ -231,51 +231,30 @@ header {
     overflow: hidden;
     z-index: 999;
     background: #FCFCFC;
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    -ms-transition: height 0.3s;
-    -o-transition: height 0.3s;
-    transition: height 0.3s;
 }
 
-header div#logo {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    overflow: hidden;
-}
-
-header nav ul {
-    list-style: none;
-    margin-top: -3%;
-    height: 75px;
-    width: 100%;
-}
-
-header nav ul li {
-    float: left;
-    height: 97px;
-}
-
-header nav ul li.active {
-    border-bottom: 4px solid rgba(27, 171, 227, 1) !important;
-}
-
-header nav ul li:hover,
-header nav ul li:focus,
-header nav ul li:active {
-    border-bottom: 4px solid rgba(27, 171, 227, 0.5);
+header nav ul li.active a {
+    font-weight: bold;
     transition: .2s all;
 }
 
-header nav a {
-    line-height: 125px;
+a.nav-link {
+    position: relative;
+    top: 11%;
+}
+
+header ul.nav {
+    height: 59px;
+}
+
+header nav a.navbar-brand {
+    padding: 0;
+}
+
+header nav ul a {
     padding-left: 20px;
     color: #595657;
     padding-right: 20px;
-    font-weight: 700;
     font-size: 18px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -298,12 +277,6 @@ section.hide-content {
 
 header nav a:hover {
     color: #000;
-    text-decoration: none;
-}
-
-header.smaller {
-    height: 125px;
-    top: 0px;
 }
 
 .section-title {
@@ -315,80 +288,7 @@ header.smaller {
     width: 100%;
 }
 
-/*// The wrapper was defined with a fixed width and height
-// Note, that the pointer-events property is set to 'none'.
-// We don't need any pointer events in the entire element.*/
-.menu-icon-wrapper{
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 34px;
-    pointer-events: none;
-    transition: 0.1s;
-}
-
-/*// To perform the scaled transform for the second demo*/
-.menu-icon-wrapper.scaled{
-    transform: scale(0.5);
-}
-
-/*// Adjusting the position of the SVG element*/
-.menu-icon-wrapper svg{
-    position: absolute;
-    top: -33px;
-    left: -33px;
-}
-
-/*// Defining the styles for the path elements*/
-.menu-icon-wrapper svg path{
-    stroke: #fff;
-    stroke-width: 6px;
-    stroke-linecap: round;
-    fill: transparent;
-}
-
-/*// Setting the pointer-events property to 'auto',
-// and allowing only events for the trigger element*/
-.menu-icon-wrapper .menu-icon-trigger{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    pointer-events: auto;
-    background: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-
-#logo img {
-	min-height: 75px;
-}
-
-.jumpfix {
-    height:75px;
-    display: none;
-}
-
-@media all and (max-width:960px) {
-    .jumpfix.enable {
-        display:block;
-    }
-}
-
 @media all and (max-width: 660px) {
-    header div#logo {
-        display: block;
-        margin: 0 auto;
-        height: 75px;
-        text-align: center;
-    }
-
-    header nav a {
-        line-height: 50px;
-        margin: 0 10px;
-    }
-
     #dummy2 .dummy__item h3 a {
         font-size: 1.1em !important;
         color: #666;
