@@ -121,6 +121,7 @@
 }
 
 #dummy2 {
+    display: none;
     opacity: 0;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -140,6 +141,7 @@ a.navbar-brand,
 }
 
 #dummy2.dummy--active {
+    display: block;
     opacity: 1 !important;
     position: fixed;
     bottom: 0;
@@ -292,6 +294,19 @@ header nav a:hover {
     width: 100%;
 }
 
+@media all and (max-width: 340px) {
+    a.navbar-brand {
+        width: 75%;
+        padding-top: 3px !important;
+    }
+}
+
+@media all and (max-width: 360px) {
+    a.navbar-brand {
+        width: 75%;
+        padding-top: 7px !important;
+    }
+}
 @media all and (max-width: 660px) {
     #dummy2 .dummy__item h3 a {
         font-size: 1.1em !important;
