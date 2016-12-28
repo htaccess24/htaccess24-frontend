@@ -1,8 +1,10 @@
-<header>
-     <nav class="navbar navbar-fixed-top">
+<div class="jumpfix"></div>
+<header class="navbar-fixed-top">
+     <nav class="navbar">
          <div class="container">
              <a class="navbar-brand" routerLink="/">
-                 <img width="254" height="59" alt="" title="" src="/images/htaccess24.svg" />
+                  <img width="254" height="59" alt="" title="" src="/images/htaccess24.svg" />
+                 <!-- <img width="254" height="59" alt="" title="" src="https://placehold.it/254x59" /> -->
              </a>
 
              <ul class="hidden-sm-down nav navbar-nav float-xs-right">
@@ -23,11 +25,18 @@
              </div><!-- /device -->
          </div>
     </nav>
-    <div id="dummy2" class="dummy col-xs-12 hidden-md-up" [ngClass]="{'dummy--active': isOpened, 'animated fadeIn': isOpened}">
-        <h3><a routerLink="/blog" routerLinkActive="active" (click)="toggleMenue()">Blog</a></h3>
-        <h3><a routerLink="/tuts" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></h3>
-        <h3><a routerLink="/tools" routerLinkActive="active" (click)="toggleMenue()">Tools</a></h3>
-        <h3><a routerLink="/ueber-mich" routerLinkActive="active" (click)="toggleMenue()">Über mich</a></h3>
+    <div id="dummy2" class="dummy hidden-md-up h-100" [ngClass]="{'dummy--active': isOpened, 'animated fadeIn': isOpened}">
+        <nav>
+            <div class="container">
+                <ul class="nav">
+                    <li><a routerLink="/blog" routerLinkActive="active" (click)="toggleMenue()">Blog</a></li>
+                    <li><a routerLink="/tuts" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></li>
+                    <li><a routerLink="/tools" routerLinkActive="active" (click)="toggleMenue()">Tools</a></li>
+                    <li><a routerLink="/ueber-mich" routerLinkActive="active" (click)="toggleMenue()">Über mich</a></li>
+                </ul>
+            </div>
+        </nav>
+
     </div>
     <div class="clearfix"></div>
 </header>

@@ -1,9 +1,9 @@
-nav {
-    font-weight: bold;
-}
-
 .vcenter {
     display: inline-block;
     vertical-align: middle;
     float: none;
+}
+
+main {
+    height: 2000px;
 }
