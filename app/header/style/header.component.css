@@ -239,6 +239,10 @@ header {
     background: #FCFCFC;
 }
 
+.navbar-fixed-top {
+    overflow: hidden;
+}
+
 header nav ul li.active a {
     font-weight: 600;
     transition: .2s all;
