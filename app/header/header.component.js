@@ -17,6 +17,11 @@ var HeaderComponent = (function () {
     HeaderComponent.prototype.toggleMenue = function () {
         this.isOpened = !this.isOpened;
     };
+    HeaderComponent.prototype.toggleMenueIfOpened = function () {
+        if (this.isOpened == true) {
+            this.isOpened = !this.isOpened;
+        }
+    };
     return HeaderComponent;
 }());
 HeaderComponent = __decorate([

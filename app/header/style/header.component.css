@@ -240,8 +240,21 @@ header {
 }
 
 header nav ul li.active a {
-    font-weight: bold;
+    font-weight: 600;
     transition: .2s all;
+}
+
+.nav-link.faq {
+    color: rgba(89, 86, 87, 0.7);
+    font-size: 24px !important;
+    font-weight: 400;
+    margin-top: -5px;
+}
+
+.active .nav-link.faq {
+    font-weight: 700;
+    font-size:24px;
+    margin-top: -5px;
 }
 
 a.nav-link {

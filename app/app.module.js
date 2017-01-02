@@ -10,10 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var app_routes_1 = require("./app.routes");
 var header_module_1 = require("./header/header.module");
 var footer_module_1 = require("./footer/footer.module");
+var news_service_1 = require("./services/news.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,6 +26,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routes_1.AppRoutingModule,
+            http_1.HttpModule,
             header_module_1.HeaderModule,
             footer_module_1.FooterModule
         ],
@@ -31,6 +34,7 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             app_routes_1.appRoutingComponents
         ],
+        providers: [news_service_1.NewsService],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])
