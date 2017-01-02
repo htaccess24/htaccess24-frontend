@@ -16,4 +16,10 @@ export class HeaderComponent {
     toggleMenue(): void {
         this.isOpened = !this.isOpened;
     }
+
+    toggleMenueIfOpened(): void {
+        if (this.isOpened == true) {
+            this.isOpened = !this.isOpened;
+        }
+    }
 }

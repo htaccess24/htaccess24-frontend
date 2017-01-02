@@ -3,7 +3,7 @@
      <nav class="navbar">
          <div class="container">
              <div class="row">
-                 <a class="navbar-brand" routerLink="/">
+                 <a class="navbar-brand" (click)="toggleMenueIfOpened()" routerLink="/">
                      <img class="img-fluid" width="254" height="59" alt="" title="" src="/images/htaccess24.svg" />
                      <!-- <img width="254" height="59" alt="" title="" src="https://placehold.it/254x59" /> -->
                  </a>
@@ -13,7 +13,8 @@
                      <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link" routerLink="/tutorials">Tutorials</a></li>
                      <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link" routerLink="/tools">Tools</a></li>
                      <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link" routerLink="/ueber-mich">Über mich</a></li>
-                     <li class="nav-item h-100"><button class="btn btn-outline-primary" type="button"><a class="nav-link" routerLink="/ueber-mich">Kontakt</a></button></li>
+                     <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link" routerLink="/kontakt">Kontakt</a></li>
+                     <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link faq" routerLink="/faq">?</a></li>
                  </ul>
 
                  <div class="hidden-lg-up float-xs-right menu-toggler" (click)="toggleMenue()">
@@ -35,6 +36,8 @@
                     <li><a routerLink="/tuts" routerLinkActive="active" (click)="toggleMenue()">Tutorials</a></li>
                     <li><a routerLink="/tools" routerLinkActive="active" (click)="toggleMenue()">Tools</a></li>
                     <li><a routerLink="/ueber-mich" routerLinkActive="active" (click)="toggleMenue()">Über mich</a></li>
+                    <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link" routerLink="/kontakt">Kontakt</a></li>
+                    <li class="nav-item h-100" routerLinkActive="active"><a class="nav-link faq" routerLink="/faq">?</a></li>
                 </ul>
             </div>
         </nav>
