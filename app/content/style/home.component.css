@@ -1,0 +1,147 @@
+section[name="top-news"] {
+    background: #595657
+}
+
+.column {
+    flex-direction: column;
+    flex: 1;
+}
+
+.article {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    color: #666666;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-basis: auto;
+    margin: 10px;
+    transition: .2s all;
+}
+
+.article:hover,
+.article:focus {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    color: #444;
+    transition: .2s all;
+}
+
+.article:hover span.number {
+    color: #666 !important;
+    transition: .2s all;
+}
+
+.article-image {
+    background: #eee;
+    display: block;
+    padding-top: 100% !important;
+    max-height: 251px;
+    position: relative;
+    width: 100%;
+}
+
+.article-image img {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.article-image.is-3by2 {
+    padding-top: 66.6666% !important;
+}
+
+.article-image.is-16by9 {
+    padding-top: 56.25% !important;
+}
+
+.article-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px !important;
+    background: #fff;
+}
+
+h2.article-info span.content {
+    display: flex;
+    font-size: 0.85em;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.article-title {
+    color: #333;
+    font-family: Metrophobic;
+    flex-shrink: 0;
+    font-size: 1.4em;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px !important;
+}
+
+.article-title span.title {
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    width: 85%;
+}
+
+.article-title span.number {
+    float:right;
+    font-size: 1.4em;
+    margin-top:-10px;
+    color:#eee;
+}
+
+.article-title span.number:after {
+    clear:right;
+}
+
+.article-content {
+    flex: 1;
+    margin-top: 5px;
+}
+
+.article-info {
+    display: flex;
+    font-size: 0.85em;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+    .columns,
+    .column {
+        display: flex;
+    }
+
+    .main-column {
+        flex: 1;
+    }
+
+    .nested-column {
+        flex: 12;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main-column {
+        flex: 2;
+    }
+
+    .nested-column {
+        flex: 2;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .columns,
+    .column {
+        display: flex;
+    }
+}

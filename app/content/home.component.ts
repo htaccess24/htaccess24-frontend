@@ -1,9 +1,8 @@
 /**
  * Created by Jason on 05.12.2016.
  */
-import {Component, Input, EventEmitter, OnChanges, OnInit} from "@angular/core"
+import {Component, Input, OnInit} from "@angular/core"
 import {News} from './news.module';
-import {EmitterService} from '../emitter.service';
 import {NewsService} from '../services/news.service';
 
 @Component({
@@ -12,23 +11,30 @@ import {NewsService} from '../services/news.service';
     styleUrls: ['./app/content/style/home.component.css'],
 })
 
-export class HomeComponent implements OnInit, OnChanges {
-    news: News[];
+export class HomeComponent implements OnInit {
+    topNews: News[];
+    newsImages: News[];
+    newsWithoutImages: News[];
 
     constructor(private newsService: NewsService) {}
 
     @Input() newsId: string;
 
     ngOnInit() {
-        this.loadNews();
+        this.loadTopNewsOnFront();
+        this.loadTopNewsWithImages();
+        this.loadTopNewsWithoutImages();
     }
 
-    loadNews() {
-        this.newsService.getNews().subscribe(onNext => this.news = onNext, err => {console.log(err);});
+    loadTopNewsOnFront() {
+        this.newsService.getTopNewsOnFront().subscribe(onNext => this.topNews = onNext, err => {console.log(err);});
     }
 
-    ngOnChanges(changes:any) {
-        EmitterService.get(this.newsId).subscribe((newNews:News[]) => {this.loadNews()});
+    loadTopNewsWithImages() {
+        this.newsService.getTopNewsWithImages().subscribe(onNext => this.newsImages = onNext, err => {console.log(err);});
     }
 
+    loadTopNewsWithoutImages() {
+        this.newsService.getTopNewsWithoutImages().subscribe(onNext => this.newsWithoutImages = onNext, err => {console.log(err);});
+    }
 }

@@ -1,3 +1,63 @@
-Test HomeComponent <a routerLink="/blog">Blog</a>
-
-<p *ngFor="let news of news">{{news.id}} {{news.name}}</p>
+<section name="top-news">
+    <main class="container columns">
+        <div class="column main-column">
+            <a *ngFor="let news of topNews" class="article first-article" routerLink="/{{news?.slug}}">
+                <figure class="article-image is-3by2">
+                    <img src="{{news?.image}}" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2 class="article-title">
+                        <span class="title">{{news?.name}}</span>
+                        <span class="number">#{{news?.position}}</span>
+                    </h2>
+                    <p class="article-content">
+                        {{news?.content}}
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 Kommentare</span>
+                    </footer>
+                </div>
+            </a>
+            <div class="columns">
+                <div *ngFor="let news of newsImages" class="column nested-column">
+                    <a class="article" routerLink="/{{news?.slug}}">
+                        <figure class="article-image is-16by9">
+                            <img src="{{news?.image}}" alt="" />
+                        </figure>
+                        <div class="article-body">
+                            <h2 class="article-title">
+                                <span class="title">{{news?.name}}</span>
+                                <span class="number">#{{news?.position}}</span>
+                            </h2>
+                            <p class="article-content">
+                                {{news?.content}}
+                            </p>
+                            <footer class="article-info">
+                                <span>By Joe Smith</span>
+                                <span>42 Kommentare</span>
+                            </footer>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <a *ngFor="let news of newsWithoutImages" class="article" routerLink="/{{news?.slug}}">
+                <div class="article-body">
+                    <h2 class="article-title">
+                        <span class="title">{{news?.name}}</span>
+                        <span class="number">#{{news?.position}}</span>
+                    </h2>
+                    <p class="article-content">
+                        {{news?.content}}
+                    </p>
+                    <footer class="article-info">
+                        <span>By Joe Smith</span>
+                        <span>42 Kommentare</span>
+                    </footer>
+                </div>
+            </a>
+        </div>
+    </main>
+</section>
