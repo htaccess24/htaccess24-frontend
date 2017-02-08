@@ -1,0 +1,57 @@
+footer {
+    background: #222222;
+    color: #FFFFFF;
+    padding: 40px 0
+}
+
+section[name="footer"] {
+    transform: rotate(-4deg);
+    padding: 3em 0 6em;
+    width: 103%;
+}
+
+h3::first-letter {
+    color: #1BABE3
+}
+
+h3 {
+    color: #595657;
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: 400;
+    padding: 7px 0
+}
+
+ul li .nav-link {
+    color: #FFFFFF;
+    padding-left: 0
+}
+
+.icon {
+    display: inline-block;
+    width: 1.75em;
+    height: 1.75em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: #595657;
+    transition: .2s all;
+}
+
+.icon:hover,
+.icon:focus,
+.icon:active {
+    fill: #FFFFFF;
+    transition: .2s all;
+}
+
+.row .col {
+    padding-right: 0
+}
+
+.social-icons {
+    padding: 0
+}
+
+.social-icons .row {
+    margin: 22px 0
+}

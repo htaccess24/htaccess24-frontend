@@ -5,5 +5,19 @@
 }
 
 main {
-    height: 2000px;
+    margin: 0 0 430px 0;
+    position: relative;
+    z-index: 2;
+}
+
+ht24-footer {
+    position: fixed;
+    height: 430px;
+    z-index: 0;
+    bottom: .25em;
+    left: 0;
+    right: 0;
+    transform: rotate(4deg);
+    margin-left: -2em;
+    width: 103%;
 }

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 export class NewsService {
     constructor (private http: Http) {}
 
-    private apiUrlTo = 'http://10.0.10.179:8000/v1/news';
+    private apiUrlTo = 'http://127.0.0.1:8000/v1/news';
     private apiToken = '?api_token=CIrHb9Vr1OOibuKcm9ppvxEviy9g3tKOxgDL6Ni5fkr72GjneExctSIjlFsX';
 
     private apiRequest = this.apiUrlTo;
