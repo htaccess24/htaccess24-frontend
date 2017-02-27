@@ -1,11 +1,6 @@
 section[name="top-news"] {
     background: #595657;
-    box-shadow: -1em 0.75em 1.25em #595657;
-    transform: rotate(-3deg);
-    width: 103%;
-    padding: 5em 0 7.5em 3em;
-    margin-top: -4em;
-    margin-left: -2em;
+    padding-bottom: 7em !important;
     position: relative;
     z-index: 2;
 }
@@ -13,26 +8,34 @@ section[name="top-news"] {
 section[name="top-news"] main,
 section[name="top-news"] header {
     padding: 0;
-    transform: rotate(3deg);
 }
 
 section[name="main-content"] {
     background: #F2F1EF;
-    box-shadow: 1em 0.75em 1.25em #f2f1ef;
-    margin-top: -3.25em;
-    transform: rotate(4deg);
     position: relative;
-    z-index: 0;
-    width: 105%;
-    margin-left: -3em;
-    margin-top: -8em;
-    height: 1500px;
-    padding: 4em 0;
+    z-index: 2;
+}
+
+.triangle-top {
+    background: #595657;
+    height: 101px;
+    margin-top:-101px;
+    width: 100%;
+    padding: 0
 }
 
 section[name="main-content"] .container {
-    padding: 120px 0;
-    transform: rotate(-4deg);
+    padding: 3em 0 2em;
+}
+
+.category-filter {
+    margin-top:-4em;
+    margin-bottom: -2.9em;
+}
+
+h2.category-title {
+    margin-bottom: 1em;
+    width: 100%;
 }
 
 header h1 {
@@ -52,6 +55,55 @@ header h1 {
     margin: 20px 0
 }
 
+article {
+    background: #ffffff;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    margin-bottom: 2em;
+    transition: .2s all;
+    overflow: hidden;
+    min-height: 194px;
+    max-height: 194px;
+}
+
+article:hover,
+article:focus,
+article:active {
+    box-shadow:rgba(0, 0, 0, 0.5) 0 12px 12px 0;
+    -webkit-box-shadow:rgba(0, 0, 0, 0.5) 0 12px 12px 0;
+    -moz-box-shadow:rgba(0, 0, 0, 0.5) 0 12px 12px 0;
+    transition: margin-top;
+    cursor: pointer;
+    margin-top: -0.5em;
+    margin-bottom: 2.5em;
+    transition: .2s all;
+    text-decoration: none;
+}
+
+article.col {
+    padding: 0
+}
+
+article h3 {
+    margin: 0.75em 0 0.25em;
+}
+
+article a {
+    color: #222;
+    text-decoration: none;
+}
+
+article a main p {
+    min-height: 89px;
+    margin-bottom: 0.5em;
+}
+
+article a footer p {
+    color: #bebebe;
+    text-shadow: 1px 1px 12px #ccc
+}
+
 .article {
     background: #FFFFFF;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -65,7 +117,8 @@ header h1 {
 }
 
 .article:hover,
-.article:focus {
+.article:focus,
+.article:active {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     color: #444;
     text-decoration: none;
@@ -160,6 +213,34 @@ h2.article-info span.content {
     margin-top: 10px
 }
 
+section section {
+    margin-bottom: 2.5em
+}
+
+section[name="main-content"] .container .row section a.category-link {
+    color: #666;
+    font-weight: lighter;
+    transition: .2s all;
+}
+
+section[name="main-content"] .container .row section a.category-link:hover,
+section[name="main-content"] .container .row section a.category-link:focus
+{
+    text-decoration: none;
+    font-weight: 400;
+    transition: .2s all;
+}
+
+section[name="main-content"]:before {
+    background: url('/images/triangle-top.svg');
+    content: "";
+    display: block;
+    height: 101px;
+    position: absolute;
+    top:-101px;
+    width: 100%;
+}
+
 @media screen and (max-width: 800px) and (orientation: landscape) {
     .columns,
     .column {
@@ -172,6 +253,42 @@ h2.article-info span.content {
 
     .nested-column {
         flex: 12
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header h1.small {
+        font-size: 2.5rem;
+    }
+
+    section[name="main-content"] .d-flex {
+        display: block !important;
+    }
+
+    section[name="main-content"] img {
+        width: 100%;
+    }
+
+    section[name="main-content"] .container .row .col-md-8.p-3 p.text-right.p-4 {
+        padding-bottom: 0 !important;
+    }
+
+    section[name="main-content"] .container .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    section section {
+        margin-bottom: 2em;
+    }
+
+    .category-filter {
+        margin-bottom: 1em;
+    }
+
+    article {
+        max-height: unset !important;
+        min-height: unset !important;
     }
 }
 
@@ -199,7 +316,8 @@ h2.article-info span.content {
 
     .main-column {
         flex: 2;
-        margin: 20px 20px 20px 0
+        /*margin: 20px 20px 20px -1.25em*/
+        padding: 20px 20px 20px 0em;
     }
 
     .nested-column {

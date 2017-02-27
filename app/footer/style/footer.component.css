@@ -1,13 +1,10 @@
 footer {
     background: #222222;
-    color: #FFFFFF;
-    padding: 40px 0
+    color: #595657;
 }
 
-section[name="footer"] {
-    transform: rotate(-4deg);
-    padding: 3em 0 6em;
-    width: 103%;
+a.btn-default {
+    border: 1px solid #444444;
 }
 
 h3::first-letter {
@@ -23,8 +20,16 @@ h3 {
 }
 
 ul li .nav-link {
-    color: #FFFFFF;
-    padding-left: 0
+    color: #595657;
+    padding-left: 0;
+    transition: .2s all;
+}
+
+ul li .nav-link:hover,
+ul li .nav-link:active,
+ul li .nav-link:focus {
+    color: #ffffff;
+    transition: .2s all;
 }
 
 .icon {
@@ -48,10 +53,69 @@ ul li .nav-link {
     padding-right: 0
 }
 
-.social-icons {
+.social-icons,
+.newsletter,
+.newsletter p,
+.categories {
     padding: 0
+}
+
+.categories,
+.newsletter {
+    margin-top: 1.3em;
+}
+
+.newsletter input[type="email"] {
+    background: #595657;
+    color: #222222;
+}
+
+.newsletter input[type="email"]::-webkit-input-placeholder,
+.newsletter input[type="email"]:-moz-placeholder,
+.newsletter input[type="email"]::-moz-placeholder,
+.newsletter input[type="email"]:-ms-input-placeholder {
+    color: #222222;
+    opacity: 1;
 }
 
 .social-icons .row {
     margin: 22px 0
+}
+
+.category-link {
+    border: 1px solid #595657;
+    border-radius: 4px;
+    color: #595657;
+    display: inline-block;
+    padding: .5em;
+    margin-bottom: 1em;
+    transition: .2s all
+}
+
+.category-link:hover,
+.category-link:focus,
+.category-link:active {
+    color: #ffffff;
+    text-decoration: none;
+    transition: .2s all
+}
+
+section[name="footer"] {
+    margin-top: -29em !important;
+    padding-top: 29em !important;
+}
+
+@media screen and (max-width: 800px) {
+    section[name="footer"] .container .row .text-right,
+    section[name="footer"] .container .row ul li.nav-item {
+        text-align: center !important;
+    }
+
+    section[name="footer"] .container .row div {
+        margin-bottom: 1.5em;
+    }
+
+    .social-icons .row a {
+        padding-left: 0 !important;
+    }
 }

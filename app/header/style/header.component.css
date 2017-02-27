@@ -338,3 +338,20 @@ header nav a:hover {
 ====================================
 - END :: Header Area
 ******************************************************************/
+
+@media screen and (max-width: 800px) {
+    ul.nav {
+        display:block;
+        width: 100%;
+    }
+
+    #dummy2 a {
+        padding-bottom: .75rem;
+    }
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+    ul.nav {
+        width: 50%;
+    }
+}

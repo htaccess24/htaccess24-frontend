@@ -1,3 +1,7 @@
+html {
+    background: #F2F1EF;
+}
+
 .vcenter {
     display: inline-block;
     vertical-align: middle;
@@ -5,19 +9,33 @@
 }
 
 main {
-    margin: 0 0 430px 0;
+    margin: 0 0 354px 0;
     position: relative;
     z-index: 2;
 }
 
+main:after {
+    background: url('/images/triangle-bottom.svg');
+    content: "";
+    display: block;
+    height: 101px;
+    width: 100%;
+}
+
 ht24-footer {
     position: fixed;
-    height: 430px;
     z-index: 0;
-    bottom: .25em;
+    bottom: 0;
     left: 0;
     right: 0;
-    transform: rotate(4deg);
-    margin-left: -2em;
-    width: 103%;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        margin: 0;
+    }
+
+    ht24-footer {
+        position: relative;
+    }
 }

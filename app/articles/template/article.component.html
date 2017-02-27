@@ -1,0 +1,66 @@
+<section name="error-content" *ngIf="isError">
+    <div class="container p-5">
+        <header class="col-xs-12">
+            <h1 class="display-1">4<span class="htblue">0</span>4</h1>
+            <h2>[ Oops, die Seite konnte ich nicht finden ]</h2>
+        </header>
+        <main class="col-xs-12">
+            <p>Fehler passieren jedem einmal... gibst du mir noch eine Chance?</p>
+            <form class="p-5">
+                <div class="form-group col-md-9 mx-auto">
+                    <input type="search" class="form-control form-control-lg" placeholder="Suchbegriff eingeben..." />
+                    <p id="passwordHelpBlock" class="form-text text-muted p-2">
+                        Ich bin stets bemüht, dir genau die Inhalte zu bieten, nach denen du suchst.
+                    </p>
+                </div>
+            </form>
+        </main>
+    </div>
+</section>
+<section name="article-content" *ngIf="!isError">
+    <article *ngFor="let article of articleInformation" >
+        <header class="col-xs-12">
+            <div class="container">
+                <figure>
+                    <picture>
+                        <source srcset="http://placehold.it/1600x500, http://placehold.it/3200x1000" media="(min-width: 1024px)" />
+                        <source srcset="http://placehold.it/480x250, http://placehold.it/960x500" media="(min-width: 480px)" />
+
+                        <!---Fallback--->
+                        <img class="img-fluid" src="http://placehold.it/480x250" alt="Feuerwehrfest 2014" srcset="http://placehold.it/480x400, http://placehold.it/960x800" />
+                    </picture>
+
+                    <figcaption>
+                        <h1 class="p-4">{{article?.name}}</h1>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="breadcrump p-4">
+                <div class="container">
+                    Startseite &raquo; Kategorie &raquo; {{article?.name}}
+                </div>
+            </div>
+        </header>
+
+        <div class="p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <p class="short-description">
+                            {{article?.short_description}}
+                        </p>
+
+                        <main [innerHTML]="article?.content">
+                        </main>
+                        <footer>
+                            Kommentare & Co.
+                        </footer>
+                    </div>
+                    <aside class="col-xs-12 col-md-4">
+                        Sidebar
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

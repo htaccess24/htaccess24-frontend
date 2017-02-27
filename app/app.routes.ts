@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './content/home.component';
-import {PageNotFoundComponent} from './content/pagenotfound.component';
+import {ArticleComponent} from './articles/article.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
-    {path: '**', component: PageNotFoundComponent}
+    {path: '**', component: ArticleComponent}
 ];
 
 @NgModule({
@@ -15,4 +15,4 @@ const appRoutes: Routes = [
 
 export class AppRoutingModule {}
 
-export const appRoutingComponents = [HomeComponent, PageNotFoundComponent];
+export const appRoutingComponents = [HomeComponent, ArticleComponent];

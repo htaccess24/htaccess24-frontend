@@ -1,22 +1,22 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
-import {News} from '../content/news.module';
+import {Category} from '../content/category.module';
 import {Observable} from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class NewsService {
+export class CategoryService {
     constructor (private http: Http) {}
 
-    private apiUrlTo = 'http://192.168.178.123:8000/v1/news';
+    private apiUrlTo = 'http://192.168.178.123:8000/v1/categories';
     private apiToken = '?api_token=CIrHb9Vr1OOibuKcm9ppvxEviy9g3tKOxgDL6Ni5fkr72GjneExctSIjlFsX';
 
     private apiRequest = this.apiUrlTo;
 
-    getTopNewsOnFront() : Observable<News[]> {
-        var apiRequestPath = '/top';
+    getFrontpageCategoriesWithNews() : Observable<Category[]> {
+        var apiRequestPath = '/frontpage';
         var apiRequest = this.apiRequest + apiRequestPath + this.apiToken;
 
         return this.http.get(apiRequest)
@@ -24,17 +24,8 @@ export class NewsService {
             .catch(this._serverError);
     }
 
-    getTopNewsWithImages() : Observable<News[]> {
-        var apiRequestPath = '/images';
-        var apiRequest = this.apiRequest + apiRequestPath + this.apiToken;
-
-        return this.http.get(apiRequest)
-            .map((res:Response) => res.json())
-            .catch(this._serverError);
-    }
-
-    getTopNewsWithoutImages() : Observable<News[]> {
-        var apiRequestPath = '';
+    getCategoryNews(newsId: number): Observable<Category[]> {
+        var apiRequestPath = '/'+ newsId;
         var apiRequest = this.apiRequest + apiRequestPath + this.apiToken;
 
         return this.http.get(apiRequest)

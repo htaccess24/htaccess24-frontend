@@ -1,4 +1,4 @@
-<section name="top-news">
+<section name="top-news" class="p-4">
     <header class="container">
         <h1 class="small">Neues aus dem Blog</h1>
     </header>
@@ -65,15 +65,40 @@
     </main>
 </section>
 <section name="main-content">
+    <!-- <img class="triangle-top col img-fluid" src="/images/triangle-top.svg" /> -->
     <div class="container">
-        <header>
-            <h1>Lorem Ipsum</h1>
-        </header>
-        <main>
-            <h2>dolor sit amet</h2>
-        </main>
-        <footer>
-            <h3>consectetur</h3>
-        </footer>
+        <div class="row">
+            <div class="col-md-8 p-4">
+                <p class="text-right p-4 category-filter">
+                    Anzeige nach <button type="button" class="btn btn-link">Kategorien</button> / Aktualität
+                </p>
+                <section *ngFor="let categories of (frontpageCategories | objToArr)">
+                    <h2 class="category-title">{{categories?.name}}</h2>
+
+                    <div class="col-xs-12" *ngFor="let newsinfo of (categories?.news | objToArr)">
+                        <article *ngFor="let news of (newsinfo | objToArr)">
+                            <a class="d-flex flex-row" routerLink="{{news?.slug}}">
+                                <div class="flex-first">
+                                    <img class="img-fluid" src="{{news?.image_url}}" alt="" />
+                                </div>
+                                <div class="col-md-7 flex-last">
+                                    <header><h3>{{news?.name}}</h3></header>
+                                    <main><p>{{news?.short_description}}</p></main>
+                                    <footer><p>Hello World #11</p></footer>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <a routerLink="{{categories?.slug}}" class="category-link">Alle Artikel zum Thema {{ categories?.name }} &raquo;</a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4 p-4">
+                <h2 class="category-title">Wer bloggt hier?</h2>
+                <h2 class="category-title">Brandheiß</h2>
+                <h2 class="category-title">Geplantes...</h2>
+            </div>
+        </div>
     </div>
 </section>
