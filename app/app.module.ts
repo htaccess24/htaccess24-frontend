@@ -14,6 +14,7 @@ import {TruncatePipe} from "./pipes/truncate.pipe";
 import {ArticleService} from "./services/article.service";
 import {SafeHtmlPipe} from "./pipes/security.pipe";
 import {HtmlDirective} from "./directives/html.directive";
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 
 @NgModule ( {
@@ -23,6 +24,7 @@ import {HtmlDirective} from "./directives/html.directive";
         HttpModule,
         HeaderModule,
         FooterModule,
+        HighlightJsModule
     ],
     declarations: [
         AppComponent,
@@ -32,7 +34,7 @@ import {HtmlDirective} from "./directives/html.directive";
         SafeHtmlPipe,
         HtmlDirective
     ],
-    providers: [NewsService, CategoryService, ArticleService],
+    providers: [NewsService, CategoryService, ArticleService, HighlightJsService],
     bootstrap: [AppComponent]
 })
 

@@ -1,9 +1,9 @@
-import {Component} from "@angular/core";
+import {Component, AfterViewInit, ElementRef} from "@angular/core";
 import {Animations} from "../services/animations";
 import {Article} from "./article.module";
 import {ArticleService} from "../services/article.service";
 import {Router, Event, NavigationEnd} from '@angular/router';
-import {DomSanitizer} from "@angular/platform-browser";
+import {HighlightJsService} from "angular2-highlight-js";
 
 @Component({
     selector: 'ht24-article',
@@ -14,11 +14,11 @@ import {DomSanitizer} from "@angular/platform-browser";
     animations: Animations.page
 })
 
-export class ArticleComponent {
+export class ArticleComponent implements AfterViewInit {
     articleInformation: Article[];
     isError: boolean = true;
 
-    constructor(_router: Router, private articleService: ArticleService, private sanitizer: DomSanitizer) {
+    constructor(_router: Router, private articleService: ArticleService, private el: ElementRef, private service: HighlightJsService) {
         _router.events.filter(event => event instanceof NavigationEnd).subscribe((event:Event) => {
             this.loadArticleInformation(event.url);
         });
@@ -35,5 +35,11 @@ export class ArticleComponent {
             },
             err => {console.log(err);}
         );
+    }
+
+    ngAfterViewInit() {
+        setTimeout(() => {
+            this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
+        }, 1000);
     }
 }

@@ -13,7 +13,8 @@
             '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-            'rxjs': 'npm:rxjs'
+            'rxjs': 'npm:rxjs',
+            'angular2-highlight-js': 'node_modules/angular2-highlight-js/lib'
         },
         packages: {
             app: {
@@ -21,6 +22,10 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            'angular2-highlight-js': {
+                main: 'highlight-js.module',
                 defaultExtension: 'js'
             }
         }

@@ -66,6 +66,10 @@ section[name="article-content"] article header .breadcrump {
     color: #1BABE3;
 }
 
+:host >>> main[ng-reflect-inner-h-t-m-l] pre {
+    margin-bottom: 0;
+}
+
 section[name="article-content"] article p.short-description {
     color: #595657;
     font-weight: bold;
