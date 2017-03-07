@@ -14,7 +14,9 @@
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
             'rxjs': 'npm:rxjs',
-            'angular2-highlight-js': 'node_modules/angular2-highlight-js/lib'
+            'angular2-highlight-js': 'npm:angular2-highlight-js/lib',
+            'ng2-sticky-kit': 'npm:ng2-sticky-kit',
+            'ngx-rating': 'npm:ngx-rating'
         },
         packages: {
             app: {
@@ -24,8 +26,16 @@
             rxjs: {
                 defaultExtension: 'js'
             },
+            "@angular/forms": { main: "index.js", defaultExtension: "js" },
             'angular2-highlight-js': {
                 main: 'highlight-js.module',
+                defaultExtension: 'js'
+            },
+            'ng2-sticky-kit': {
+                defaultExtension: 'js'
+            },
+            'ngx-rating': {
+                main: 'index.js',
                 defaultExtension: 'js'
             }
         }

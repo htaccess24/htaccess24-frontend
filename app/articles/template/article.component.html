@@ -36,28 +36,49 @@
                 </figure>
             </div>
             <div class="breadcrump p-4">
-                <div class="container">
-                    Startseite &raquo; Kategorie &raquo; {{article?.name}}
+                <div class="container p-4">
+                    Startseite &raquo; Kategorie &raquo; <span class="active">{{article?.name}}</span>
                 </div>
             </div>
         </header>
 
-        <div class="p-4">
+        <div class="content p-4">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-8">
-                        <p class="short-description">
+                        <p class="short-description p-4">
                             {{article?.short_description}}
                         </p>
 
-                        <main [innerHTML]="article?.content">
+                        <main [safeHtml]="article?.content" class="p-4">
                         </main>
                         <footer>
                             Kommentare & Co.
                         </footer>
                     </div>
-                    <aside class="col-xs-12 col-md-4">
-                        Sidebar
+                    <aside class="col-xs-12 col-md-4 p-4 social-icons">
+                        <sticky [sticky-offset-top]="100" sticky-width="342px">
+                            <section name="author-info" class="p-4">
+                                <h3>Bewertung abgeben</h3>
+
+                            </section>
+                            <section name="author-info" class="p-4">
+                                <h3>Inhaltsverzeichnis</h3>
+                            </section>
+                            <section name="author-info" class="p-4">
+                                <h3>Über den Author</h3>
+                                <figure>
+                                    <img class="img-fluid" src="https://placehold.it/600x450" />
+                                    <figcaption><p>Ein Abschnitt aus dem "Über mich" Text</p></figcaption>
+                                </figure>
+                            </section>
+                            <section name="author-info" class="p-4">
+                                <h3>Umfrage</h3>
+                            </section>
+                            <section name="author-info" class="p-4">
+                                <h3>Neuigkeiten</h3>
+                            </section>
+                        </sticky>
                     </aside>
                 </div>
             </div>

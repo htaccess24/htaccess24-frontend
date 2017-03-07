@@ -11,11 +11,11 @@ import {FooterModule} from './footer/footer.module';
 import {NewsService} from "./services/news.service";
 import {CategoryService} from "./services/category.service";
 import {TruncatePipe} from "./pipes/truncate.pipe";
-import {ArticleService} from "./services/article.service";
 import {SafeHtmlPipe} from "./pipes/security.pipe";
 import {HtmlDirective} from "./directives/html.directive";
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
-
+import {StickyModule} from "ng2-sticky-kit/ng2-sticky-kit";
+import {HighlightJsModule, HighlightJsService} from 'angular2-highlight-js';
+import {ArticleService} from "./services/article.service";
 
 @NgModule ( {
     imports: [
@@ -23,6 +23,7 @@ import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
         AppRoutingModule,
         HttpModule,
         HeaderModule,
+        StickyModule,
         FooterModule,
         HighlightJsModule
     ],
@@ -34,7 +35,7 @@ import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
         SafeHtmlPipe,
         HtmlDirective
     ],
-    providers: [NewsService, CategoryService, ArticleService, HighlightJsService],
+    providers: [NewsService, CategoryService, HighlightJsService, ArticleService],
     bootstrap: [AppComponent]
 })
 

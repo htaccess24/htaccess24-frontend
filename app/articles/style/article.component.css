@@ -28,52 +28,77 @@ section[name="article-content"] article header h1 {
 }
 
 section[name="article-content"] article header .breadcrump {
-    background: #F2F1EF;
+    background: #222;
+    color: #595657;
     margin-top: -16px;
+    margin-bottom: 2em;
+}
+
+section[name="article-content"] article header .breadcrump span.active {
+    color: #FFFFFF;
+}
+
+section[name="article-content"] article header .breadcrump .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 /**
  * Article Content Styling
  */
 
-:host >>> main[ng-reflect-inner-h-t-m-l] {
+:host /deep/ main.safeHtml {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
     color: #595657;
     font-size: 1.2em;
     margin-top: 1.25em
+
 }
 
-:host >>> main[ng-reflect-inner-h-t-m-l] h1,
-:host >>> main[ng-reflect-inner-h-t-m-l] h2 {
+:host /deep/ main.safeHtml h1,
+:host /deep/ main.safeHtml h2 {
     font-size: 2rem;
 }
 
-:host >>> main[ng-reflect-inner-h-t-m-l] h3,
-:host >>> main[ng-reflect-inner-h-t-m-l] h4 {
+:host /deep/ main.safeHtml h3,
+:host /deep/ main.safeHtml h4 {
     font-size: 1.8rem;
 }
 
-:host >>> main[ng-reflect-inner-h-t-m-l] h5,
-:host >>> main[ng-reflect-inner-h-t-m-l] h6 {
+:host /deep/ main.safeHtml h5,
+:host /deep/ main.safeHtml h6 {
     font-size: 1.6rem;
 }
 
-:host >>> main[ng-reflect-inner-h-t-m-l] h1:first-letter,
-:host >>> main[ng-reflect-inner-h-t-m-l] h2:first-letter,
-:host >>> main[ng-reflect-inner-h-t-m-l] h3:first-letter,
-:host >>> main[ng-reflect-inner-h-t-m-l] h4:first-letter,
-:host >>> main[ng-reflect-inner-h-t-m-l] h5:first-letter,
-:host >>> main[ng-reflect-inner-h-t-m-l] h6:first-letter {
+:host /deep/ main.safeHtml h1:first-letter,
+:host /deep/ main.safeHtml h2:first-letter,
+:host /deep/ main.safeHtml h3:first-letter,
+:host /deep/ main.safeHtml h4:first-letter,
+:host /deep/ main.safeHtml h5:first-letter,
+:host /deep/ main.safeHtml h6:first-letter {
     color: #1BABE3;
 }
 
-:host >>> main[ng-reflect-inner-h-t-m-l] pre {
+:host /deep/ main.safeHtml pre {
     margin-bottom: 0;
+    color: #a9b7c6;
+}
+
+section[name="article-content"] article .content {
+    padding-top: 0 !important;
 }
 
 section[name="article-content"] article p.short-description {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
     color: #595657;
     font-weight: bold;
-    margin-bottom: 2.5em;
+    margin-bottom: 2.25em;
 }
 
 /**
@@ -116,4 +141,34 @@ section[name="error-content"] footer article {
     background: #ffffff;
     text-align: start;
     padding: 0
+}
+
+/**
+ * Sidebar
+ */
+aside {
+    padding-top: 0 !important;
+}
+
+aside section {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 9px 9px 0;
+
+    margin-bottom: 1.75em
+}
+
+aside section h3 {
+    font-size: 1.3em;
+    margin-bottom: 0;
+}
+
+aside section figure {
+    margin-top: 1.5em;
+}
+
+.sticky,
+.sticky-end {
+    margin-right: 24px;
 }
