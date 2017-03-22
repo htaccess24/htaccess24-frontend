@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 export class CategoryService {
     constructor (private http: Http) {}
 
-    private apiUrlTo = 'http://192.168.178.139:8000/v1/categories';
+    private apiUrlTo = 'http://10.0.10.179:8000/v1/categories';
     private apiToken = '?api_token=CIrHb9Vr1OOibuKcm9ppvxEviy9g3tKOxgDL6Ni5fkr72GjneExctSIjlFsX';
 
     private apiRequest = this.apiUrlTo;

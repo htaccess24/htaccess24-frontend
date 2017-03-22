@@ -12,11 +12,11 @@ import {NewsService} from "./services/news.service";
 import {CategoryService} from "./services/category.service";
 import {TruncatePipe} from "./pipes/truncate.pipe";
 import {SafeHtmlPipe} from "./pipes/security.pipe";
-import {HtmlDirective} from "./directives/html.directive";
+import {HtmlDirective} from "./directives/safeHtml.directive";
 import {StickyModule} from "ng2-sticky-kit/ng2-sticky-kit";
 import {HighlightJsModule, HighlightJsService} from 'angular2-highlight-js';
 import {ArticleService} from "./services/article.service";
-import { EmojifyModule } from 'angular2-emojify';
+//import { EmojifyModule } from 'angular2-emojify';
 import {Config} from "./config/config";
 import {HtaccessRatingModule} from "./modules/rating/rating.module";
 
@@ -30,7 +30,7 @@ import {HtaccessRatingModule} from "./modules/rating/rating.module";
         FooterModule,
         HighlightJsModule,
         HtaccessRatingModule,
-        EmojifyModule
+        //EmojifyModule
     ],
     declarations: [
         AppComponent,

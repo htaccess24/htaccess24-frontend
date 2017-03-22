@@ -4,6 +4,7 @@ import {Article} from "./article.module";
 import {ArticleService} from "../services/article.service";
 import {Router, Event, NavigationEnd} from '@angular/router';
 import {HighlightJsService} from "angular2-highlight-js";
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
     moduleId: module.id,
@@ -20,8 +21,12 @@ export class ArticleComponent implements AfterViewInit {
     private isError: boolean = false;
     private isLoading: boolean = false;
 
-    constructor(_router: Router, private articleService: ArticleService, private el: ElementRef, private service: HighlightJsService) {
-        _router.events.filter(event => event instanceof NavigationEnd).subscribe((event:Event) => {
+    constructor(_router: Router, private articleService: ArticleService, private el: ElementRef,
+                private service: HighlightJsService, private sanitizer: DomSanitizer) {
+
+        this.sanitizer.bypassSecurityTrustUrl('https://i.ytimg.com/vi_webp/GlIzuTQGgzs/hqdefault.webp');
+
+        _router.events.filter(event => event instanceof NavigationEnd).subscribe((event: Event) => {
             this.isLoading = true;
 
             if (event.url != '/') {
@@ -44,17 +49,19 @@ export class ArticleComponent implements AfterViewInit {
 
                 setTimeout(() => {
                     this.isLoading = false;
-                }, delay);
+                }, 500);
             },
-            err => {console.log(err);}
+            err => {
+                console.log(err);
+            }
         );
     }
 
     ngAfterViewInit() {
         setTimeout(() => {
             if (this.el.nativeElement.querySelector('.typescript') !== null) {
-                this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
+                this.service.highlight(this.el.nativeElement.querySelector('.type'));
             }
-        }, 1000);
+        });
     }
 }
