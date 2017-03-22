@@ -1,16 +1,18 @@
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Config} from "../config/config";
+import {Http , Response, Headers, RequestOptions} from '@angular/http';
 import {Article} from '../articles/article.module';
 import {Observable} from 'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+
 @Injectable()
 export class ArticleService {
     constructor (private http: Http) {}
 
-    private apiUrlTo = 'http://192.168.178.123:8000/v1/article';
+    private apiUrlTo = 'http://192.168.178.139:8000/v1/article';
     private apiToken = '?api_token=CIrHb9Vr1OOibuKcm9ppvxEviy9g3tKOxgDL6Ni5fkr72GjneExctSIjlFsX';
 
     private apiRequest = this.apiUrlTo;
@@ -22,6 +24,25 @@ export class ArticleService {
         return this.http.get(apiRequest)
             .map((res:Response) => res.json())
             .catch(this._serverError);
+    }
+
+    rateArticle (rating: number, articleId: number) {
+        var apiRequestPath = '/rate/'+ articleId +'/'+ rating +'/'+ localStorage.getItem('guid');
+        var apiRequest = this.apiRequest + apiRequestPath + this.apiToken;
+
+        var apiBody = JSON.stringify({ ratingValue: rating, ratedArticle: articleId });
+        console.log('Called rateArticle Function');
+        console.log(JSON.stringify({ ratingValue: rating, ratedArticle: articleId }));
+
+        return this.http.post(apiRequest, apiBody)
+            .subscribe(
+                response => {
+                    console.log(response.json());
+                }
+                /*error => {
+                    //this._serverError;
+                }*/
+            );
     }
 
     private _serverError(error: any) {

@@ -12,6 +12,11 @@ export class AppComponent {
 	currentRoute: string;
 
 	constructor (_router: Router) {
+		if (localStorage.getItem('guid') === null) {
+			localStorage.setItem('guid', ''+ Math.random().toString(36).replace(/[^a-zA-Z0-9]+/g, '').substr(0, 32) +'');
+		}
+
+
 		_router.events.filter(event => event instanceof NavigationEnd).subscribe((event:Event) => {
 			this.routeChanged(event.url);
 		});

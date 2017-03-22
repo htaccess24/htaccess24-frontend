@@ -6,9 +6,10 @@ import {Router, Event, NavigationEnd} from '@angular/router';
 import {HighlightJsService} from "angular2-highlight-js";
 
 @Component({
+    moduleId: module.id,
     selector: 'ht24-article',
-    templateUrl: './app/articles/template/article.component.html',
-    styleUrls: ['./app/articles/style/article.component.css'],
+    templateUrl: './template/article.component.html',
+    styleUrls: ['./style/article.component.css'],
     styles: [':host { width: 100%; display: block; position: relative; }'],
     host: {'[@routeAnimation]': 'true'},
     animations: Animations.page
@@ -16,11 +17,16 @@ import {HighlightJsService} from "angular2-highlight-js";
 
 export class ArticleComponent implements AfterViewInit {
     articleInformation: Article[];
-    isError: boolean = true;
+    private isError: boolean = false;
+    private isLoading: boolean = false;
 
     constructor(_router: Router, private articleService: ArticleService, private el: ElementRef, private service: HighlightJsService) {
         _router.events.filter(event => event instanceof NavigationEnd).subscribe((event:Event) => {
-            this.loadArticleInformation(event.url);
+            this.isLoading = true;
+
+            if (event.url != '/') {
+                this.loadArticleInformation(event.url);
+            }
         });
     }
 
@@ -29,9 +35,16 @@ export class ArticleComponent implements AfterViewInit {
             onNext => {
                 this.articleInformation = onNext;
 
-                if (this.articleInformation.length > 0) {
-                    this.isError = false;
+                if (this.articleInformation.length <= 0) {
+                    this.isError = true;
+                    var delay = 5000;
+                } else {
+                    var delay = 500;
                 }
+
+                setTimeout(() => {
+                    this.isLoading = false;
+                }, delay);
             },
             err => {console.log(err);}
         );
@@ -39,7 +52,9 @@ export class ArticleComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         setTimeout(() => {
-            this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
+            if (this.el.nativeElement.querySelector('.typescript') !== null) {
+                this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
+            }
         }, 1000);
     }
 }

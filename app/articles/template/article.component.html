@@ -1,4 +1,13 @@
-<section name="error-content" *ngIf="isError">
+<section name="loading-content" class="animated fadeIn" *ngIf="isLoading">
+    <div class="container p-5">
+        <main class="col-xs-12">
+            <h2>Bitte warten...</h2>
+        </main>
+
+    </div>
+</section>
+
+<section name="error-content" class="animated fadeIn" *ngIf="isError && !isLoading">
     <div class="container p-5">
         <header class="col-xs-12">
             <h1 class="display-1">4<span class="htblue">0</span>4</h1>
@@ -17,7 +26,7 @@
         </main>
     </div>
 </section>
-<section name="article-content" *ngIf="!isError">
+<section name="article-content" class="animated fadeIn" *ngIf="!isError && !isLoading">
     <article *ngFor="let article of articleInformation" >
         <header class="col-xs-12">
             <div class="container">
@@ -30,8 +39,9 @@
                         <img class="img-fluid" src="http://placehold.it/480x250" alt="Feuerwehrfest 2014" srcset="http://placehold.it/480x400, http://placehold.it/960x800" />
                     </picture>
 
-                    <figcaption>
+                    <figcaption class="article-headline">
                         <h1 class="p-4">{{article?.name}}</h1>
+                        <span class="p-4 article-rating">★ ★ ★ ★ ★</span>
                     </figcaption>
                 </figure>
             </div>
@@ -53,24 +63,32 @@
                         <main [safeHtml]="article?.content" class="p-4">
                         </main>
                         <footer>
-                            Kommentare & Co.
+                            <section name="author-info" class="p-4 col-md-10 float-md-right">
+                                <figure>
+                                    <img class="img-circle float-md-left" src="https://placehold.it/600x450" alt="Placeholder Text" height="175" width="175" />
+                                    <figcaption class="p-2">
+                                        <h3>Über den Author</h3>
+                                        <p>Ein Abschnitt aus dem "Über mich" TextEin Abschnitt aus dem "Über mich" Text
+                                            Ein Abschnitt aus dem "Über mich" TextEin Abschnitt aus dem "Über mich" Text
+                                            Ein Abschnitt aus dem "Über mich" TextEin Abschnitt aus dem "Über mich" Text
+                                            Ein Abschnitt aus</p>
+                                    </figcaption>
+                                </figure>
+                            </section>
+                            <div class="clearfix"></div>
+                            <section name="commentar-box" class="col-xs-12">
+                                Kommentare & Co.
+                            </section>
+
                         </footer>
                     </div>
                     <aside class="col-xs-12 col-md-4 p-4 social-icons">
                         <sticky [sticky-offset-top]="100" sticky-width="342px">
                             <section name="author-info" class="p-4">
-                                <h3>Bewertung abgeben</h3>
-
+                                <ht24-rating [articleId]="article?.id"></ht24-rating>
                             </section>
                             <section name="author-info" class="p-4">
                                 <h3>Inhaltsverzeichnis</h3>
-                            </section>
-                            <section name="author-info" class="p-4">
-                                <h3>Über den Author</h3>
-                                <figure>
-                                    <img class="img-fluid" src="https://placehold.it/600x450" />
-                                    <figcaption><p>Ein Abschnitt aus dem "Über mich" Text</p></figcaption>
-                                </figure>
                             </section>
                             <section name="author-info" class="p-4">
                                 <h3>Umfrage</h3>

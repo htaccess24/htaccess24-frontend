@@ -16,6 +16,9 @@ import {HtmlDirective} from "./directives/html.directive";
 import {StickyModule} from "ng2-sticky-kit/ng2-sticky-kit";
 import {HighlightJsModule, HighlightJsService} from 'angular2-highlight-js';
 import {ArticleService} from "./services/article.service";
+import { EmojifyModule } from 'angular2-emojify';
+import {Config} from "./config/config";
+import {HtaccessRatingModule} from "./modules/rating/rating.module";
 
 @NgModule ( {
     imports: [
@@ -25,7 +28,9 @@ import {ArticleService} from "./services/article.service";
         HeaderModule,
         StickyModule,
         FooterModule,
-        HighlightJsModule
+        HighlightJsModule,
+        HtaccessRatingModule,
+        EmojifyModule
     ],
     declarations: [
         AppComponent,
@@ -35,8 +40,16 @@ import {ArticleService} from "./services/article.service";
         SafeHtmlPipe,
         HtmlDirective
     ],
-    providers: [NewsService, CategoryService, HighlightJsService, ArticleService],
+    providers: [
+        NewsService,
+        CategoryService,
+        HighlightJsService,
+        ArticleService,
+        Config
+    ],
     bootstrap: [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule {
+    constructor(private _config: Config) {}
+}
