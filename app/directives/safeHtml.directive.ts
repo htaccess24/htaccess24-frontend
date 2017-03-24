@@ -17,6 +17,6 @@ export class HtmlDirective implements OnInit {
 
     ngOnInit() {
         this.elementRef.nativeElement.innerHTML = this.sanitizer.sanitize(SecurityContext.HTML, this.safeHtml);
-        this.elementRef.nativeElement.innerHTML = this.sanitizer.sanitize(SecurityContext.URL, this.safeHtml);
+        //this.elementRef.nativeElement.innerHTML = this.sanitizer.sanitize(SecurityContext.URL, this.safeHtml);
     }
 }

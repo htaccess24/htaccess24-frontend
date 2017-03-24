@@ -60,12 +60,12 @@
                             {{article?.short_description}}
                         </p>
 
-                        <main [safeHtml]="article?.content" class="p-4">
+                        <main [safeHtml]="article?.content | trustHtml" class="p-4">
                         </main>
                         <footer>
                             <section name="author-info" class="p-4 col-md-10 float-md-right">
                                 <figure>
-                                    <img class="img-circle float-md-left" src="https://placehold.it/600x450" alt="Placeholder Text" height="175" width="175" />
+                                    <img class="author-image float-md-left" src="https://placehold.it/600x450" alt="Placeholder Text" height="175" width="175" />
                                     <figcaption class="p-2">
                                         <h3>Über den Author</h3>
                                         <p>Ein Abschnitt aus dem "Über mich" TextEin Abschnitt aus dem "Über mich" Text
@@ -86,15 +86,6 @@
                         <sticky [sticky-offset-top]="100" sticky-width="342px">
                             <section name="author-info" class="p-4">
                                 <ht24-rating [articleId]="article?.id"></ht24-rating>
-                            </section>
-                            <section name="author-info" class="p-4">
-                                <h3>YouTube Video</h3>
-                                <object class="img-fluid">
-                                    <param name="movie" value="http://www.youtube.com/embed/Ne5J4bxWypI?html5=1&amp;rel=0&amp;hl=en_US&amp;version=3"/>
-                                    <param name="allowFullScreen" value="true"/>
-                                    <param name="allowscriptaccess" value="always"/>
-                                    <embed width="640" height="360" src="http://www.youtube.com/embed/Ne5J4bxWypI?html5=1&amp;rel=0&amp;hl=en_US&amp;version=3" class="youtube-player" type="text/html" allowscriptaccess="always" allowfullscreen="true"/>
-                                </object>
                             </section>
                             <section name="author-info" class="p-4">
                                 <h3>Inhaltsverzeichnis</h3>

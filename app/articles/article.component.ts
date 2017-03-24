@@ -24,8 +24,6 @@ export class ArticleComponent implements AfterViewInit {
     constructor(_router: Router, private articleService: ArticleService, private el: ElementRef,
                 private service: HighlightJsService, private sanitizer: DomSanitizer) {
 
-        this.sanitizer.bypassSecurityTrustUrl('https://i.ytimg.com/vi_webp/GlIzuTQGgzs/hqdefault.webp');
-
         _router.events.filter(event => event instanceof NavigationEnd).subscribe((event: Event) => {
             this.isLoading = true;
 
@@ -60,8 +58,8 @@ export class ArticleComponent implements AfterViewInit {
     ngAfterViewInit() {
         setTimeout(() => {
             if (this.el.nativeElement.querySelector('.typescript') !== null) {
-                this.service.highlight(this.el.nativeElement.querySelector('.type'));
+                this.service.highlight(this.el.nativeElement.querySelector('.typescript'));
             }
-        });
+        }, 1000);
     }
 }

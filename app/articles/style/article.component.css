@@ -123,8 +123,7 @@ section[name="author-info"]:after {
     clear: both;
 }
 
-.img-circle {
-    border-radius: 100%;
+.author-image {
     margin-left: -111.5px;
     margin-right: 28px;
     margin-top: 3.5px;
